@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="../css/business-frontpage.css" rel="stylesheet" />
+    <link href="../css/cssgrid-area-bitacora.css" rel="stylesheet" />
+  </head>
+  <body>
+     <!--navigation-->
+     <div id="nav-placeholder"> </div>
+     <br>
+
+ 
+
+   
+    <div class="parent">
+      <div class="div1">
+        <H1>CANVA</H1>
+        <!-- <canvas width="200" height="500" style="border: 10px; border-color: black;"></canvas> -->
+        <canvas id="canvas"></canvas>
+      </div>
+        <!-- Form filter -->
+        <div class="div2">
+            <h1>FORM</h1>
+             <!-- Page Content -->
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                              <label for="formGroupExampleInput">Unidad</label>
+                              <select class="form-control" id="unidades" onchange="getValue(this)">
+                              </select>
+                              <!-- <input type="text" class="form-control" id="txtId" placeholder="Example input"> -->
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Marca Cabezal</label>
+                                <input type="text" class="form-control" id="marcaCabezal" placeholder="Marca Cabezal">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Número de Placa</label>
+                                <input type="text" class="form-control" id="numeroDePlaca" placeholder="Número de Placa">
+                            </div>
+                            <!-- <button type="button" id="btnFind" class="btn btn-primary" onclick="fetchActividades()">Buscar</button> -->
+                            <!-- <button type="button" id="btnSave" class="btn btn-primary" onclick="fetchSaveActividades()">Save</button> -->
+                            <a class="btn btn-primary btn-lg" href="#" role="button" id="btnfind2" onclick="fetchActividades()">Find</a>
+                            <!-- <a class="btn btn-primary btn-lg" href="#" role="button" id="btnfind3" onclick="fetchSaveActividades()">Save</a> -->
+                        </form>
+                        <br>
+                        <table id="myTable" class="table table-striped table-bordered table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Posicion</th>
+                                    <th>Quemado</th>
+                                    <th>Marca</th>
+                                    <th>Medida</th>
+                                </tr>
+                            </thead>
+                            <tbody id="testBody"></tbody>
+                        </table>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+   
+    <script src='scripts/bitacoraLlanta.js'></script>
+    <script src='scripts/unidadesMaquinaria.js'></script>
+     <!-- Bootstrap core JavaScript -->
+     <script src="../vendor/jquery/jquery.min.js"></script>
+     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <!--menú-->
+     <script>$.get("navbar.html", function (data) {
+        $("#nav-placeholder").replaceWith(data);
+        });
+      </script>
+      <script>
+        fetchUnidades()
+      </script>
+  </body>
+</html>

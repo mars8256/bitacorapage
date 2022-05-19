@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/grid-css.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    
+</head>
+<body>
+   
+  <div class="grid-container">
+
+    <div class="head">
+
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary  navbar-fixed-top " >
+    
+        <a class="navbar-brand" href="../index.html" style="color:snow">Home</a>
+        <a class="navbar-brand" href="bitacora.html" style="color:snow">Bitacora</a>
+        <a class="navbar-brand" href="actividad.html" style="color: snow;">Actividad</a>
+        <a class="navbar-brand" href="marcallanta.html" style="color: snow;">Marca Llanta</a>
+      </nav>
+
+
+
+    </div><!--end header-->
+
+    <div class="footer"></div> <!--end footer-->
+
+    <div id="workarea" class="workarea">
+      <canvas></canvas>
+
+      <!-- The Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Información de Llanta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Orden De Trabajo</label>
+                  <input class="form-control form-control-lg" id="txtOt" type="text" placeholder="Orden de Trabajo">
+                </div>
+                
+                  <div class="form-group">
+                    <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                    <div class="col-10">
+                      <input class="form-control" type="date" value="2021-04-15" id="example-date-input">
+                    </div>
+                  </div>
+                
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Odómetro</label>
+                  <input class="form-control form-control-lg" id="txtOdometer" type="text" placeholder="Odómetro Maquinaria">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Quemado</label>
+                  <input class="form-control form-control-lg" id="txtQuemado" type="text" placeholder="Número Orden De Trabajo">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Profundidad</label>
+                  <select class="form-control" id="cboProfundidad" placeholder="Profundidad Llanta">
+                    <option>0/32</option>
+                    <option>1/32</option>
+                    <option>2/32</option>
+                    <option>3/32</option>
+                    <option>4/32</option>
+                    <option>5/32</option>
+                    <option>6/32</option>
+                    <option>7/32</option>
+                    <option>8/32</option>
+                    <option>9/32</option>
+                    <option>10/32</option>
+                    <option>11/32</option>
+                    <option>12/32</option>
+                    <option>13/32</option>
+                    <option>14/32</option>
+                    <option>15/32</option>
+                    <option>16/32</option>
+                    <option>17/32</option>
+                    <option>18/32</option>
+                    <option>19/32</option>
+                    <option>20/32</option>
+                    <option>21/32</option>
+                    <option>22/32</option>
+                    <option>23/32</option>
+                    <option>24/32</option>
+                    <option>25/32</option>
+                    <option>26/32</option>
+                    <option>27/32</option>
+                    <option>28/32</option>
+                    <option>29/32</option>
+                    <option>30/32</option>
+                    <option>31/32</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Marca</label>
+                  <select class="form-control" id="cboMarca" placeholder="Marca de llanta">
+                    <option>ANNAITE</option>
+                    <option>AUFINE</option>
+                    <option>DOUBLE COIN</option>
+                    <option>FIREMAX</option>
+                    <option>LONG MARCH</option>
+                    <option>SIERRA</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Medida</label>
+                  <select class="form-control" id="cboMedida">
+                    <option>275/80R22.5</option>
+                    <option>295/75R22.5</option>
+                    <option>295/80R22.5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Actividad</label>
+                  <select class="form-control" id="cboActividad">
+                    <option>LLANTA PINCHADA</option>
+                    <option>CAMBIO DE EMPAQUE DE VÁLVULA</option>
+                    <option>CAMBIO DE VÁLVULA</option>
+                    <option>CAMBIO DE CENTRO</option>
+                    <option>ALINEACIÓN DE VÁLVULAS</option>
+                    <option>AJUSTES DE VÁLVULA</option>
+                    <option>CAMBIO DE TUBO Y/O PROTECTOR</option>
+                    <option>ALAMBRES EXPUESTOS</option>
+                    <option>ESTALLADA POR BAJA PRESIÓN</option>
+                    <option>ESTALLADA POR EMBOLSAMIENTO</option>
+                    <option>ESTALLADA POR IMPACTO</option>
+                    <option>HERIDA EN CASCO</option>
+                    <option>DAÑO POR PROBLEMAS MECÁNICOS</option>
+                    <option>CASCO CON VENA O BOLSA</option>
+                    <option>DESGASTE IRREGULAR</option>
+                    <option>ENGEMELADO</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Observaciones</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- The Modal -->
+
+
+    </div> <!--end work area-->
+
+    <div class="objectDescription">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">Panel header</div>
+        <div class="panel-body">
+
+          
+         
+       
+
+            <form>
+             
+              <!-- <div class="form-group">
+                <select id="truks"></select>
+              </div> -->
+              
+
+               
+
+                <!-- <div class="form-group">
+                  <label for="formGroupExampleInput">Código Unidad</label>
+                  <div class="form-group">
+                    <select id="truks" onchange="getValue(this);"></select>
+                  </div>
+                </div> -->
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Medida</label>
+                  <select class="form-control" id="truks" onchange="getValue(this);">
+                    
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Tipo Unidad</label>
+                  <input type="text" class="form-control" id="tipoUnidad" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Número de Placa</label>
+                    <input type="text" class="form-control" id="numeroDePlaca" placeholder="Another input">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Marca De Cabezal</label>
+                    <input type="text" class="form-control" id="marcaCabezal" placeholder="Another input">
+                </div>
+            </form>
+
+             <!-- Table -->
+        <table id="myTable" class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Quemado</th>
+              <th>Marca</th>
+              <th>Medida</th>
+            </tr>
+          </thead>
+          <tbody id="testBody"></tbody>
+           
+          </table>
+        </div>
+        <div class="panel-footer">Panel footer</div>
+        
+      </div>
+
+
+    </div><!--end object description-->
+
+  </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+</body>
+</html>
